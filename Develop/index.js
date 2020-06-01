@@ -6,6 +6,8 @@ const fs = require("fs");
 
 inquirer
   .prompt([
+    // What is your Project Title? [string]
+
     {
       type: "input",
       message: "What is your Project title?",
@@ -28,21 +30,22 @@ inquirer
     // How to Install: [string]
     {
       type: "input",
-      message: "How do you Install?",
+      message:
+        "What are the instructions on how to install the dependencies for your repo?",
       name: "installation",
     },
 
     // What is the Usage? [string]
     {
       type: "input",
-      message: "What is the Usage?",
+      message: "What is the expected use of this repo?",
       name: "usage",
     },
 
     // What is your License? [string]
     {
       type: "input",
-      message: "What is your License?",
+      message: "What licenses does this repo have?",
       name: "license",
     },
 
@@ -56,31 +59,31 @@ inquirer
     // What are your Tests? [string]
     {
       type: "input",
-      message: "What are your Tests?",
+      message:
+        "How do you run the tests on this repo (assuming that testing has been implemented)?",
       name: "tests",
     },
 
     // What are your Questions? [array: string]
     {
       type: "input",
-      message: "What are your Questions?",
+      message: "Who does one contact for questions about the repo, and how?",
       name: "questions",
     },
 
     // What is your  GitHub User profile picture? [string: image url?]
+    {
+      type: "input",
+      message: "What is your  GitHub User profile picture URL?",
+      name: "pictureURL",
+    },
 
     // What is your GitHub User email? [string]
-
-    // {
-    //   type: "password",
-    //   message: "What is your password?",
-    //   name: "password"
-    // },
-    // {
-    //   type: "password",
-    //   message: "Re-enter password to confirm:",
-    //   name: "confirm"
-    // }
+    {
+      type: "input",
+      message: "What is your GitHub User email?",
+      name: "email",
+    },
 
     // const questions = [
     //array of questions
@@ -98,12 +101,11 @@ inquirer
     // What is your GitHub User email? [string]
   ])
 
-  .then(function (response) {
-    const filename = response.title + ".json";
+  //then create .json file with responeses
+  .then(function (data) {
+    const filename = data.title + ".json";
 
-    fs.writeFile(filename, JSON.stringify(response, null, "\t"), function (
-      err
-    ) {
+    fs.writeFile(filename, JSON.stringify(data, null, "\t"), function (err) {
       if (err) {
         return console.log(err);
       }

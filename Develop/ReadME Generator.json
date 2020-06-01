@@ -1,0 +1,13 @@
+{
+	"title": "ReadME Generator",
+	"description": "Here is the descriptiong of my app",
+	"tableOfContents": "Start, links, end",
+	"installation": "To install this repo, do the following: blah, blah, blah",
+	"usage": "To create a README",
+	"license": "licenses included",
+	"contributors": "Hannah Perreault",
+	"tests": "Tests are run through...",
+	"questions": "Hannah Perreault at hperre@gmail.com",
+	"pictureURL": "image.com",
+	"email": "hperre@gmail.com"
+}

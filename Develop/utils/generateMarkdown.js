@@ -14,10 +14,11 @@
 //   * User GitHub email
 
 function generateMarkdown(data) {
-  return `
-# ${data.title}
+  //   return `
+  // # ${data.title}
 
-`;
+  // `;
+  console.log(`${data.tile}`);
 }
-
+generateMarkdown();
 module.exports = generateMarkdown;
